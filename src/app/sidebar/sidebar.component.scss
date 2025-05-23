@@ -1,0 +1,47 @@
+/* sidebar.component.scss */
+
+$sidebar-bg: #1a1a1a;
+$sidebar-accent: #d32f2f;
+$sidebar-text: #fff;
+$sidebar-hover: #2d2d2d;
+
+.sidebar {
+  background: $sidebar-bg;
+  color: $sidebar-text;
+  width: 250px;
+  min-height: 100vh;
+  padding: 1.5rem 1rem;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+
+  .sidebar-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $sidebar-accent;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 1rem;
+
+      a {
+        color: $sidebar-text;
+        text-decoration: none;
+        display: block;
+        padding: 0.75rem 1rem;
+        border-radius: 4px;
+        transition: background 0.2s, color 0.2s;
+
+        &:hover, &.active {
+          background: $sidebar-accent;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
