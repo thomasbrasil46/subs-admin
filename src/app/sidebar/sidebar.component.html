@@ -1,17 +1,19 @@
-<div class="sidebar">
+<div class="sidebar" [ngClass]=" collapsed ? 'sidebar-collapsed' : '' ">
   <div class="logo-container">
     <button class="logo"></button>
-    <div class="logo-text"></div>
-    <button class="btn-close"></button>
+    <div class="logo-text" *ngIf="collapsed">Angular</div>
+    <button class="btn-close" *ngIf="collapsed">
+      <i class="fal fa-times close-icon"></i>"
+    </button>
   </div>
   <div class="sidebar-header">
     <h2>Subs Admin</h2>
   </div>
   <ul class="sidebar-menu">
     <li class="sidebar-item" *ngFor="let data of navData">
-      <a class="sidebar-menu-link" [routerLink]="[data.routerLink]">Subscriptions
+      <a class="sidebar-menu-link" [routerLink]="[data.routerLink]">
         <i class="sidebar-menu-icon" [class]="data.icon"></i>
-        <span class="sidebar-menu-text">{{data.label}}</span>
+        <span class="sidebar-menu-text" *ngIf="collapsed">{{data.label}}</span>
       </a>
     </li>
     <li class="sidebar-item">
