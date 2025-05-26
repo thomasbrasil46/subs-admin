@@ -1,17 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { navbarData } from './nav-data';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {
   title = 'subs-admin';
-  onMenuItemClick(item: any): void {
-    // Handle menu item click here
-    console.log('Menu item clicked:', item);
 
-  }
+  collapsed = false;
+  navData = navbarData;
 }
