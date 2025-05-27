@@ -14,4 +14,12 @@ export class SidebarComponent {
 
   collapsed = false;
   navData = navbarData;
+
+  toggleCollapse(): void {
+    this.collapsed = !this.collapsed;
+  }
+
+  closeSidebar (): void {
+    this.collapsed = false;
+  }
 }
