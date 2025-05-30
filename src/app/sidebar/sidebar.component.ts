@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, Output } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { navbarData } from './nav-data';
-import { EventEmitter } from 'node:stream';
+
 
 interface SidebarToggle {
   screenWidth: number;
@@ -18,8 +18,9 @@ interface SidebarToggle {
 export class SidebarComponent {
   title = 'subs-admin';
 
-  @Output() onToggleSidebar: EventEmitter<> = new EventEmitter();
+  @Output() onToggleSidebar: EventEmitter<SidebarToggle> = new EventEmitter();
   collapsed = false;
+  screenwidth = 0;
   navData = navbarData;
 
   toggleCollapse(): void {
