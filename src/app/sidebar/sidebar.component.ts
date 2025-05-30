@@ -1,7 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { navbarData } from './nav-data';
+import { EventEmitter } from 'node:stream';
+
+interface SidebarToggle {
+  screenWidth: number;
+  collapsed: boolean;
+}
 
 @Component({
   selector: 'app-sidebar',
@@ -12,6 +18,7 @@ import { navbarData } from './nav-data';
 export class SidebarComponent {
   title = 'subs-admin';
 
+  @Output() onToggleSidebar: EventEmitter<> = new EventEmitter();
   collapsed = false;
   navData = navbarData;
 
